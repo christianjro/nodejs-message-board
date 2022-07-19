@@ -3,11 +3,13 @@ const router = express.Router()
 
 const messages = [
     {
+        title: "ABC",
         text: "Hi there!",
-        user: "Amando",
+        user: "Alex",
         added: new Date()
     },
     {
+        title: "DEF",
         text: "Hello World!",
         user: "Charles",
         added: new Date()
@@ -15,7 +17,7 @@ const messages = [
 ]
 
 router.get('/', (req, res) => {
-    res.render('index', { title: "Mini Message Board", messages: messages})
+    res.render('index', { title: "Mini Message Board", messages: messages })
 })
 
 router.get('/new', (req, res) => {
@@ -23,11 +25,13 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/new', (req, res) => {
-    let messageUser = req.body.messageUser
+    let messageTitle = req.body.messageTitle
     let messageText = req.body.messageText
+    let messageUser = req.body.messageUser
     messages.push({
-        user: messageUser,
+        title: messageTitle,
         text: messageText, 
+        user: messageUser,
         added: new Date()
     })
     res.redirect('/')

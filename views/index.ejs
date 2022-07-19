@@ -1,6 +1,10 @@
-<h2>Hello World</h2>
+<a href="/new" class="newMessageBtn">New Message</a>
+
 <% messages.forEach( message => { %> 
-    <p>Text: <%= message.text %></p>
-    <p>User: <%= message.user %></p>
-    <p>Added: <%= message.added.toDateString() %></p>
+    <div class="messageBox">
+        <p>Title: <%= message.title %></p>
+        <p>Text: <%= message.text %></p>
+        <p>User: <%= message.user %></p>
+        <p>Added: <%= message.added.toDateString() %></p>
+    </div>
 <% }) %> 
