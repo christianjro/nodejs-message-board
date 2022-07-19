@@ -1,0 +1,6 @@
+<h2>Hello World</h2>
+<% messages.forEach( message => { %> 
+    <p>Text: <%= message.text %></p>
+    <p>User: <%= message.user %></p>
+    <p>Added: <%= message.added.toDateString() %></p>
+<% }) %> 
